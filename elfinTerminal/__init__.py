@@ -3,5 +3,5 @@
 # @author: firstelfin
 # @time: 2025/05/21 22:31:01
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
