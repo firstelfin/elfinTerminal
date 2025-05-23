@@ -9,6 +9,11 @@ import argparse
 def pip_set_args(subparser):
     pip_config = subparser.add_parser("pip", help="pip configuration")
 
+
+def pypi_set_args(subparser):
+    pypi_config = subparser.add_parser("pypi", help="pypi configuration")
+    pypi_config.add_argument("--config", default="token", help="pypi配置项")
+
 def set_args():
     terminal_parser = argparse.ArgumentParser(
         description='系统控制小工具🔧',
@@ -20,6 +25,7 @@ def set_args():
     subparsers = terminal_parser.add_subparsers(dest="mode", title="Sub-commands")
 
     pip_set_args(subparsers)
+    pypi_set_args(subparsers)
 
     args = terminal_parser.parse_args()
     return args

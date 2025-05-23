@@ -26,3 +26,14 @@ def get_pip_conf_path():
     else:
         # return Path(os.environ.get('APPDATA')) / 'pip' / 'pip.ini'
         raise NotImplementedError('暂不支持该系统')
+
+
+def get_pypi_conf_path():
+    """获取PyPI配置文件路径"""
+    
+    if os.name == 'posix':  # Unix/Linux/Mac
+        new_path = Path.home() / '.pypirc'
+    else:
+        # new_path = Path.home() / '.pypirc'
+        raise NotImplementedError('暂不支持该系统')
+    return new_path
