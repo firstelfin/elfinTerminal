@@ -41,14 +41,42 @@ PIP_SOURCES = {
         'trusted-host': 'mirrors.nju.edu.cn'}
 }
 
+
+VIMRC_CONTENT = {
+    "number": "",  # "显示行号"
+    "relativenumber": "",  #: "显示相对行号(方便跳转)"
+    "cursorline": "",  #: "高亮当前行"
+    "showcmd": "",  #: "显示当前输入的命令"
+    "wildmenu": "",  #: "命令补全提示"
+    "tabstop": 4,  #: "Tab显示为4空格"
+    "shiftwidth": 4,  #: "自动缩进宽度"
+    "expandtab": "",  #: "Tab转空格"
+    "autoindent": "",  #: "自动缩进"
+    "hlsearch": "",  #: "高亮搜索结果"
+    "ignorecase": "",  #: "忽略大小写"
+    "smartcase": "",  #: "智能大小写(有大写时区分)"
+    "backspace": "indent,eol,start",  #: "允许退格键删除更多"
+    "mouse": "a",  #: "启用鼠标支持"
+    "syntax": "on",  #: "语法高亮"
+    "clipboard": "unnamed",  #: "共享系统剪贴板,需Vim支持"
+    "encoding": "utf-8",  #: "编辑器编码为UTF-8"
+    "fileencodings": "utf-8,ucs-bom,gb18030,gbk,gb2312,cp936",  #: "文件编码"
+}
+
+
 if __name__ == '__main__':
-    from pprint import pp
-    res = dict()
-    for i, j, k in zip(PIP_SOURCES[0], PIP_SOURCES[1], PIP_SOURCES[2]):
-        k_id, k_name = k.split("-")
-        res[int(k_id)] = {
-            "name": k_name,
-            "index-url": i,
-            "trusted-host": j
-        }
-    pp(res)
+    import os
+    # from pprint import pp
+    # res = dict()
+    # for i, j, k in zip(PIP_SOURCES[0], PIP_SOURCES[1], PIP_SOURCES[2]):
+    #     k_id, k_name = k.split("-")
+    #     res[int(k_id)] = {
+    #         "name": k_name,
+    #         "index-url": i,
+    #         "trusted-host": j
+    #     }
+    # pp(res)
+    from pathlib import Path
+    print(Path.home())
+    a = (Path.home() / ".vimrc").expanduser()
+    print(a)

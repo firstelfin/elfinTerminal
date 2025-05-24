@@ -5,6 +5,7 @@
 # @desc: 设置PYPI相关使用配置
 
 import configparser
+from getpass import getpass
 from pathlib import Path
 from elfinTerminal.tools.pathSearch import get_pypi_conf_path
 
@@ -33,7 +34,7 @@ def set_pypi_token():
         return None
     
     print("正在设置PYPI相关配置...")
-    token = input("请输入PYPI Token: ")
+    token = getpass("请输入PYPI Token: ")
     config_parser = configparser.ConfigParser()
     config_parser.read(pypi_conf_path)
     config_parser["pypi"] = {
