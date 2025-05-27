@@ -7,6 +7,7 @@ from elfinTerminal.scripts.config import set_args
 from elfinTerminal.setUp.pipSetUp import set_pip_source
 from elfinTerminal.setUp.pypiSetUp import set_pypi_token
 from elfinTerminal.setUp.vimSetUp import set_vim_config
+from elfinTerminal.setUp.aptSetUP import set_up_apt
 
 
 def elfin_terminal():
@@ -18,6 +19,8 @@ def elfin_terminal():
             set_pypi_token()
     elif args.mode == "vim":
         set_vim_config()
+    elif args.mode is "apt":
+        set_up_apt()
     else:
         print("Invalid sub-command mode")
 

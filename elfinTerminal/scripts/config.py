@@ -9,6 +9,9 @@ import argparse
 def pip_set_args(subparser):
     pip_config = subparser.add_parser("pip", help="pip configuration")
 
+def apt_set_args(subparser):
+    apt_config = subparser.add_parser("apt", help="apt configuration")
+
 
 def vim_set_args(subparser):
     vim_config = subparser.add_parser("vim", help="vim configuration")
@@ -29,6 +32,7 @@ def set_args():
     subparsers = terminal_parser.add_subparsers(dest="mode", title="Sub-commands")
 
     pip_set_args(subparsers)
+    apt_set_args(subparsers)
     vim_set_args(subparsers)
     pypi_set_args(subparsers)
 

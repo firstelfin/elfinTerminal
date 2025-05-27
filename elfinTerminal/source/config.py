@@ -63,6 +63,17 @@ VIMRC_CONTENT = {
     "fileencodings": "utf-8,ucs-bom,gb18030,gbk,gb2312,cp936",  #: "文件编码"
 }
 
+APT_SOURCES={
+    "阿里云(aliyun)": "https://mirrors.aliyun.com/ubuntu/",
+    "中国科技大学(ustc)": "https://mirrors.ustc.edu.cn/ubuntu/",
+    "网易(163)": "https://mirrors.163.com/ubuntu/",
+    "清华大学(tsinghua)": "https://mirrors.tuna.tsinghua.edu.cn/ubuntu/",
+    "浙江大学(zju)": "https://mirrors.zju.edu.cn/ubuntu/",
+    "腾讯云(tencent)": "https://mirrors.cloud.tencent.com/ubuntu",
+    "华为云(huawei)": "https://repo.huaweicloud.com/ubuntu/",
+}
+
+
 
 if __name__ == '__main__':
     import os
