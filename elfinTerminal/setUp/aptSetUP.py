@@ -67,3 +67,5 @@ def set_up_apt():
     except Exception as e:
         print(f"设置源失败: {e}")
         Path(tmp_path).unlink(missing_ok=True)
+    subprocess.run(['sudo', 'apt-get', 'update'], check=True)
+    print("更新apt源成功")

@@ -19,7 +19,7 @@ def elfin_terminal():
             set_pypi_token()
     elif args.mode == "vim":
         set_vim_config()
-    elif args.mode is "apt":
+    elif args.mode == "apt":
         set_up_apt()
     else:
         print("Invalid sub-command mode")
