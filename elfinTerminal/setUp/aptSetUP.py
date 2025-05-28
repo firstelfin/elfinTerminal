@@ -44,16 +44,16 @@ def set_up_apt():
     version_codename = get_apt_env(['VERSION_CODENAME'])['VERSION_CODENAME']
 
     new_content = [
-        f"deb ${APT_SOURCES[name]} ${version_codename} main restricted universe multiverse",
-        f"deb ${APT_SOURCES[name]} ${version_codename}-updates main restricted universe multiverse",
-        f"deb ${APT_SOURCES[name]} ${version_codename}-security main restricted universe multiverse",
-        f"deb ${APT_SOURCES[name]} ${version_codename}-proposed main restricted universe multiverse",
-        f"deb ${APT_SOURCES[name]} ${version_codename}-backports main restricted universe multiverse",
-        f"deb-src ${APT_SOURCES[name]} ${version_codename} main restricted universe multiverse",
-        f"deb-src ${APT_SOURCES[name]} ${version_codename}-security main restricted universe multiverse",
-        f"deb-src ${APT_SOURCES[name]} ${version_codename}-updates main restricted universe multiverse",
-        f"deb-src ${APT_SOURCES[name]} ${version_codename}-proposed main restricted universe multiverse",
-        f"deb-src ${APT_SOURCES[name]} ${version_codename}-backports main restricted universe multiverse",
+        f"deb {APT_SOURCES[name]} {version_codename} main restricted universe multiverse",
+        f"deb {APT_SOURCES[name]} {version_codename}-updates main restricted universe multiverse",
+        f"deb {APT_SOURCES[name]} {version_codename}-security main restricted universe multiverse",
+        f"deb {APT_SOURCES[name]} {version_codename}-proposed main restricted universe multiverse",
+        f"deb {APT_SOURCES[name]} {version_codename}-backports main restricted universe multiverse",
+        f"deb-src {APT_SOURCES[name]} {version_codename} main restricted universe multiverse",
+        f"deb-src {APT_SOURCES[name]} {version_codename}-security main restricted universe multiverse",
+        f"deb-src {APT_SOURCES[name]} {version_codename}-updates main restricted universe multiverse",
+        f"deb-src {APT_SOURCES[name]} {version_codename}-proposed main restricted universe multiverse",
+        f"deb-src {APT_SOURCES[name]} {version_codename}-backports main restricted universe multiverse",
     ]
     
     # 写入new_content到文件

@@ -6,7 +6,7 @@
 import os
 import re
 import sys
-import shutil
+import subprocess
 import warnings
 from pathlib import Path
 warnings.filterwarnings('ignore')
@@ -47,7 +47,7 @@ def get_apt_conf_path():
     # 生成bak文件
     bak_file = Path("/etc/apt/sources.list.elfinBak")
     if not bak_file.exists() and apt_source_list.exists():
-        shutil.copy2(apt_source_list, bak_file)
+        subprocess.run(['sudo', 'cp', str(apt_source_list), str(bak_file)], check=True)
         print(f"Apt配置文件已经备份到: {bak_file}")
     
     return apt_source_list
