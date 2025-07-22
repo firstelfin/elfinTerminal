@@ -36,6 +36,7 @@ def set_pip_source():
         raise ValueError(f"未知的源序号: {selected_index}")
     
     conf_path = get_pip_conf_path()
+    conf_path.parent.mkdir(parents=True, exist_ok=True)
     print(f"pip配置文件路径: {conf_path}")
     config_parser = configparser.ConfigParser()
     config_parser.read(conf_path)
